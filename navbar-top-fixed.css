@@ -1,0 +1,22 @@
+/* Show it is fixed to the top */
+body {
+  min-height: 75rem;
+  padding-top: 4.5rem;
+}
+
+.btn-info {
+  font-family: sans-serif;
+  font-size: 18px;
+  color: rgba(0, 153, 204);
+  letter-spacing: 1px;
+  line-height: 30px;
+  border: 2px solid rgba(0, 153, 204);
+  border-radius: 40px;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-info:hover {
+  color: #FFF;
+  background: rgba(204, 242, 255);
+  border: 2px solid rgba(204, 242, 255);
+}
