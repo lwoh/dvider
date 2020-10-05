@@ -65,11 +65,53 @@
     <p class="lead">Learn how to play them.</p>
      <hr class="my-4">
     <p class="lead">   
-      <a class="btn btn-lg btn-info" href="../components/navbar/" role="button">LOG IN with Spotify</a>
+      <a id="btn-login" class="btn btn-lg btn-info" href="../components/navbar/" role="button">LOG IN with Spotify</a>
     </p>
   </div>
 </main>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js">
+    
+    function generateRandomString(length) {
+          var text = '';
+          var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz';
+
+          for (var i = 0; i < length; i++) {
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+          }
+          return text;
+        };
+    
+    document.getElementById('btn-login').addEventListener('click', function() {
+
+            var client_id = 'fa4b3d7996a14a72985e572a258ebdcf'; // Your client id
+            var redirect_uri = 'https://lwoh.github.io/dvider/'; // Your redirect uri
+
+            var state = generateRandomString(16);
+
+            //localStorage.setItem(stateKey, state);
+            var scope = 'user-read-private user-read-email';
+
+            var auth_url = 'https://accounts.spotify.com/authorize';
+            auth_url += '&client_id=' + encodeURIComponent(client_id);
+            auth_url += '?response_type=token';
+            auth_url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
+            auth_url += '&state=' + encodeURIComponent(state);
+            auth_url += '&scope=' + encodeURIComponent(scope);
+            
+            $.ajax({
+                url:auth_url,
+                type:"GET",
+                success: function(result){
+                   console.log(result)
+                },
+                error:function(error){
+                   console.log(`Error ${error}`)
+                }
+
+            //window.location = url;
+          }, false);
+    
+    </script>
 </body>
 </html>
