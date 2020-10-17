@@ -67,8 +67,8 @@ $(document).ready(function()
         var scope = 'user-read-private user-read-email';
 
         var url = 'https://accounts.spotify.com/authorize';
-		url += '&client_id=' + encodeURIComponent(client_id);
-        url += '?response_type=token';        
+	    url += '?response_type=token'; 
+		url += '&client_id=' + encodeURIComponent(client_id);               
 		url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
 		url += '&state=' + encodeURIComponent(state);
         url += '&scope=' + encodeURIComponent(scope);        
