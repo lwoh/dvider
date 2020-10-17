@@ -72,7 +72,7 @@ $(document).ready(function()
 		url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
 		url += '&state=' + encodeURIComponent(state);
         url += '&scope=' + encodeURIComponent(scope);        
-        
+        console.log(window.location);
         window.location = url;
     }), false
 });
