@@ -24,13 +24,17 @@ function getHashParams() {
     return hashParams;
 };
 
+$(document).ready(function() 
+{
+console.log("z");
 var params = getHashParams();
-
+console.log("z2");
 var access_token = params.access_token,
 state = params.state,
 storedState = localStorage.getItem(stateKey);
-
+console.log("z3");
  if (access_token && (state == null || state !== storedState)) {
+ storedState = localStorage.getItem(stateKey);
     alert('There was an error during the authentication');
 } else {
 	localStorage.removeItem(stateKey);
@@ -43,20 +47,21 @@ storedState = localStorage.getItem(stateKey);
             success: function(response) {
             //userProfilePlaceholder.innerHTML = userProfileTemplate(response);
 
-            //$('#login').hide();
+            $("#btn-login").hide();
             //$('#loggedin').show();
 		    //console.log('A')
             }
         });
-} else {
+   }
+   else {
     console.log('B')
     //$('#login').show();
     //$('#loggedin').hide();
 }
+}
 		  
 //document.getElementById('btn-login').addEventListener('click', function() {
-$(document).ready(function() 
-{
+
     $("#btn-login").click(function(){
         var client_id = 'fa4b3d7996a14a72985e572a258ebdcf'; // Your client id
         var redirect_uri = 'https://lwoh.github.io/dvider/'; // Your redirect uri
@@ -64,17 +69,19 @@ $(document).ready(function()
         var state = generateRandomString(16);
         localStorage.setItem(stateKey, state);
 		
+		storedState = localStorage.getItem(stateKey);
+		
         var scope = 'user-read-private user-read-email';
 
         var url = 'https://accounts.spotify.com/authorize';
-	    url += '?response_type=token'; 
-		url += '&client_id=' + encodeURIComponent(client_id);               
-		url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
-		url += '&state=' + encodeURIComponent(state);
-        url += '&scope=' + encodeURIComponent(scope);        
-        console.log(window.location);
+		url += '?client_id=' + encodeURIComponent(client_id);
+        url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
+		url += '&scope=' + encodeURIComponent(scope); 
+		url += '&response_type=token';		
+		url += '&state=' + encodeURIComponent(state);   
+        
         window.location = url;
-    }), false
+		
+   }), false
 });
  
-};
