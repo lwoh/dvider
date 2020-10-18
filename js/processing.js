@@ -33,7 +33,9 @@ var access_token = params.access_token,
 state = params.state,
 storedState = localStorage.getItem(stateKey);
 console.log("z3");
- if (access_token && (state == null || state !== storedState)) {
+if (acces_token)
+{
+ if (state == null || state !== storedState) {
  storedState = localStorage.getItem(stateKey);
     alert('There was an error during the authentication');
 } else {
@@ -57,6 +59,7 @@ console.log("z3");
     console.log('B')
     //$('#login').show();
     //$('#loggedin').hide();
+}
 }
 }
 		  
