@@ -34,28 +34,106 @@
     <script src="js/processing.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color:#000000;">
-      <a style="color:#FFFFFF" class="navbar-brand mb-0 h1" href="#"><b>Dv/der</b></a>
-    </nav>
-
-    <main role="main" class="container">
-    <div class="jumbotron">
-      <h1 class="display-4"><b>Dv/der</b></h1>
-      <p class="lead"><b><i>Divide & Conquer Songs</i></b></p>
-	  <br>
-	  <p class="lead">Description ... Divide songs into 'pieces'. Learn how to play them.</p>
-	  <br>
-	  <hr class="my-4">
-      <p class="lead">   
-        <a id="btn-login" class="btn btn-lg btn-info" role="button">Login with Spotify</a>
-      </p>
-    </div>
-    </main>
-
-    <footer>
-        <div class="container text-center">
-            <h7><!--Copyright &copy;--> Dv/der 2020</h5>
+    <!--<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color:#000000;">
+      <a style="color:#FFFFFF" class="navbar-brand mb-0 h1" href="#"><b><br></b></a>
+    </nav> -->
+    
+	<div class="row mb-3">
+	  <div style="background-color:#000000" class="container-md themed-container">
+	    <div id="main-jumbotron" class="jumbotron">
+          <h1 class="display-4"><b>Dv/der</b></h1>
+          <p class="lead"><b><i>Divide & Conquer Songs</i></b></p>
+	      <br>
+	      <p class="lead">Description ... Divide songs into 'pieces'. Learn how to play them.</p>
+	      <br>
+	      <hr class="my-4">
+          <p class="lead">   
+            <a id="btn-login" class="btn btn-lg btn-info" role="button">Login with Spotify</a>
+		  </p>
         </div>
-    </footer>
+	  </div>
+      <div id="main-home-left" class="col-md-8 themed-grid-col">
+        <div id="grid-player" style="background-color:#000000" class="pb-3">
+          .col-md-8
+        </div>
+		<div id="grid-analysis" style="background-color:#FFFFFF" class="pb-3">
+          .col-md-8
+        </div>
+		<div id="grid-data" style="background-color:#000000" class="pb-3">
+          .col-md-8
+        </div>
+        <!--<div class="row">
+          <div style="background-color:#003322" class="col-md-12 themed-grid-col">.col-md-6</div>
+          <div class="col-md-6 themed-grid-col">.col-md-6</div>
+        </div> -->
+      </div>
+      <div id="main-home-right" style="background-color:#002333" class="col-md-4 themed-grid-col">
+	    <div id="grid-title" style="background-color:#FFFFFF" class="pb-3">
+          .col-md-4
+        </div>
+		<div id="grid-selection" style="background-color:#000000" class="pb-3">
+          .col-md-4
+        </div>
+		<div id="grid-scroll-list" style="background-color:#FFFFFF" class="pb-3">
+          <div id="list-playlist" class="list-group">
+            <!--<a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+              <div class="d-flex w-100 justify-content-between">
+                <small>3 days ago</small>
+				<h5 class="mb-1">List group item heading</h5>
+              </div>
+              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              <small>Donec id elit non mi porta.</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">List group item heading</h5>
+                <small class="text-muted">3 days ago</small>
+              </div>
+              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              <small class="text-muted">Donec id elit non mi porta.</small>
+            </a>-->
+          </div>
+        </div>
+	  </div>
+    </div>
+   
+	<nav class="navbar navbar-expand-sm navbar-light fixed-bottom" style="background-color:#000000;">
+      <a style="color:#FFFFFF" class="navbar-brand mb-0 h1" href="#">Dv/der</a>
+	  <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>-->
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li id="nav-home" class="nav-item active">
+            <a img src="assets/icons/person.svg" alt="" width="32" height="32" title="Bootstrap"style="color:#FFFFFF" class="nav-link" href="#">
+			  Home
+			</a>
+          </li>
+          <li id="nav-player" class="nav-item">
+            <a style="color:#FFFFFF" class="nav-link" href="#">AI Player</a>
+          </li>
+		  <li id="nav-profile" class="nav-item">
+            <a style="color:#FFFFFF" class="nav-link" href="#">Profile</a>
+          </li>
+          <!--<li class="nav-item">
+            <a style="color:#FFFFFF" class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+          <li class="nav-item dropup">
+            <a style="color:#FFFFFF" class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropup</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown10">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>-->
+        </ul>
+    </div>
+</nav>
+    <!--<footer>
+        <div class="container text-center"> -->
+          <!--  <h7>>--<!--Copyright &copy;--> <!--Dv/der 2020</h5> -->
+        <!--</div>
+    </footer> -->
+	
   </body>
 </html>
